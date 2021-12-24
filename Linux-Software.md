@@ -2,32 +2,43 @@ CentOS中安装Node、MySQL、Apache、VSFTP、MongoDB等软件
 
 ### 一、安装及配置Node环境
 
-#### 1、首先安装wget
+#### 1、首先安装wget(CentOS8中默认有安装)
 
 ```
 yum install -y wget
 ```
 
-#### 2、下载nodejs最新的bin包
-
+#### 2、进入下载目录
 ```
-wget https://nodejs.org/dist/v13.9.0/node-v13.9.0-linux-x64.tar.xz
-```
-
-#### 3、解压包 
-
-```
-xz -d node-v13.9.0-linux-x64.tar.xz
-tar -xf node-v13.9.0-linux-x64.tar
+cd /usr/local/soft
 ```
 
-####4、部署bin文件(配置环境变量)
+#### 3、下载nodejs最新的bin包
 
 ```
-ln -s ~/node-v13.9.0-linux-x64/bin/node /usr/bin/node
-ln -s ~/node-v13.9.0-linux-x64/bin/npm /usr/bin/npm
+wget https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz
 ```
 
+#### 4、解压包 
+
+```
+xz -d node-v16.13.1-linux-x64.tar.xz
+tar -xf node-v16.13.1-linux-x64.tar
+```
+
+#### 5、部署bin文件(配置环境变量)
+
+```
+ln -s /usr/local/node/bin/node /usr/local/bin
+ln -s /usr/local/node/bin/npm /usr/local/bin
+```
+
+#### 6、测试是否安装成功
+
+```
+node -v
+npm -v
+```
 
 
 ###二、安装MySQL及配置环境变量
